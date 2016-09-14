@@ -12,11 +12,13 @@ namespace ServiceB
     public class Startup
     {
         public IConfigurationRoot Configuration;
+        public string testv;
 
         public Startup(IHostingEnvironment env)
         {
             var aiKey = Environment.GetEnvironmentVariable("APPINSIGHTS_INSTRUMENTATIONKEY");
             var devMode = Environment.GetEnvironmentVariable("APPINSIGHTS_DEVELOPER_MODE");
+            testv = Environment.GetEnvironmentVariable("TESTVAR");
             var useDevMode = env.IsDevelopment() || !String.IsNullOrEmpty(devMode);
             this.Configuration = new ConfigurationBuilder()
                 .AddApplicationInsightsSettings(
@@ -37,7 +39,7 @@ namespace ServiceB
             app.ApplicationServices.GetService<TelemetryClient>().Context.Properties["Service name"] = "service-b";
             app.Run(context =>
             {
-                return context.Response.WriteAsync("Hello from service B running on " + Environment.MachineName);
+                return context.Response.WriteAsync("Hello from service B running on " + Environment.MachineName + " using" + testv +" compose file" );
             });
         }
     }
