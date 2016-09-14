@@ -13,9 +13,6 @@ services:
     
     service-b:
         build: ./service-b
-            context: .
-            args:
-                - TESTVAR=original
         environment:
             - APPINSIGHTS_INSTRUMENTATIONKEY
             - TESTVAR=original
