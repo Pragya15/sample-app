@@ -5,8 +5,8 @@ services:
         environment:
             - APPINSIGHTS_INSTRUMENTATIONKEY
             - TESTVAR=original
-        labels:
-            com.microsoft.azure.public.port: "80"
+        #labels:
+        #    com.microsoft.azure.public.port: "80"
         ports:
             - "8080:80"
         links:
