@@ -17,7 +17,7 @@ app.use(morgan("dev"));
 app.get('/api', function (req, res) {
     // Invoke service-b
     request('http://service-b', function (error, response, body) {
-         res.send('Hello from service A running on ' + os.hostname() + ' and ' + body);
+         res.send('Hello from service A running on ' + os.hostname() + ' and ' + body + ' with ' + process.env.TESTVAR);
     });
 });
 
