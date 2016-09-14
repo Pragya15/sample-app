@@ -1,5 +1,8 @@
 version: "2"
 services:
     service-b:
+        build:
+            args:
+                - TESTVAR=merged
         environment:
             - TESTVAR=merged
