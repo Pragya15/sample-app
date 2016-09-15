@@ -3,6 +3,3 @@ services:
     service-a:
         labels:
             com.microsoft.azure.public.port: "80"
-    service-b:
-        environment:
-            - TESTVAR=merged

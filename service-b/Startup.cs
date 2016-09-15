@@ -32,13 +32,12 @@ namespace ServiceB
 
         public void Configure(IApplicationBuilder app)
         {
-            var testv = Environment.GetEnvironmentVariable("TESTVAR");
             app.UseApplicationInsightsRequestTelemetry();
             app.UseApplicationInsightsExceptionTelemetry();
             app.ApplicationServices.GetService<TelemetryClient>().Context.Properties["Service name"] = "service-b";
             app.Run(context =>
             {
-                return context.Response.WriteAsync("Hello from service B running on " + Environment.MachineName + " using" + testv +" compose file" );
+                return context.Response.WriteAsync("Hello from service B running on " + Environment.MachineName);
             });
         }
     }
