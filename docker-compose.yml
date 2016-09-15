@@ -4,7 +4,7 @@ services:
         build: ./service-a
         environment:
             - APPINSIGHTS_INSTRUMENTATIONKEY
-            #- TESTVAR=original
+            - TESTVAR=original
         labels:
             com.microsoft.azure.public.port: "80"
         ports:
