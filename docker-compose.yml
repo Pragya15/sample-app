@@ -7,7 +7,7 @@ services:
         #labels:
         #    com.microsoft.azure.public.port: "80"
         ports:
-            - "8081:80"
+            - "8082:80"
         links:
             - service-b
     
