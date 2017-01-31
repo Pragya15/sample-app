@@ -1,3 +1,4 @@
+
 # Azure Container Apps (ACA) samples
 Repo contains sample Azure Container App populating diagnostics data to [Microsoft Azure Application Insights](https://azure.microsoft.com/en-us/services/application-insights/)
 
@@ -20,4 +21,3 @@ docker-compose up --build
 # Deploying to ACS cluster
 TBD
 #comment
-
